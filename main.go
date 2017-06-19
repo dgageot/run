@@ -27,7 +27,7 @@ func main() {
 
 	command := expand(os.Args[1:], aliases)
 
-	cmd := exec.Command(command[0], command[1:]...)
+	cmd := exec.Command("docker", command...)
 	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
