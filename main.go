@@ -100,6 +100,10 @@ func readAliases(paths []string) (map[string][]string, error) {
 				continue
 			}
 
+			if len(strings.TrimSpace(line)) == 0 {
+				continue
+			}
+
 			key, command, err := parseLine(line)
 			if err != nil {
 				return nil, err
